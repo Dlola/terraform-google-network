@@ -40,16 +40,16 @@ module "subnets" {
   secondary_ranges = var.secondary_ranges
 }
 
-/******************************************
-	Routes
- *****************************************/
-module "routes" {
-  source            = "./modules/routes"
-  project_id        = var.project_id
-  network_name      = module.vpc.network_name
-  routes            = var.routes
-  module_depends_on = [module.subnets.subnets]
-}
+# /******************************************
+# 	Routes
+#  *****************************************/
+# module "routes" {
+#   source            = "./modules/routes"
+#   project_id        = var.project_id
+#   network_name      = module.vpc.network_name
+#   routes            = var.routes
+#   module_depends_on = [module.subnets.subnets]
+# }
 
 # /******************************************
 # 	Firewall rules
